@@ -91,3 +91,26 @@ this.props.children 属性。它表示组件的所有子节点
         ,document.getElementById('app')
     )
 组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求, 此外，getDefaultProps 方法可以用来设置组件属性的默认值。
+### 7. 获取真实的dom节点
+    var Hello = React.createClass({
+        handleClick:function(){
+            this.refs.myInput.focus();
+            console.log(1)
+        },
+        render:function(){
+            return (
+             <div>
+                    <input type='text' ref='myInput'/>   
+                    <input type='button' value='点击' onClick={this.handleClick}/> 
+             </div>  
+            )
+        },
+
+
+    })
+    ReactDOM.render(
+        <Hello/>
+        ,document.getElementById('app')
+    )
+通过ref获取dom节点,
+#### 注意: onClick 事件中 click要大写
