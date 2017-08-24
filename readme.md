@@ -114,3 +114,32 @@ this.props.children 属性。它表示组件的所有子节点
     )
 通过ref获取dom节点,
 #### 注意: onClick 事件中 click要大写
+### this.state的使用
+    var Hello = React.createClass({
+        getInitialState:function(){
+            return {
+                title:'hello world'
+            }
+        },
+        render:function(){
+            return (
+                <div>
+                    <h1>{this.state.title}</h1>
+                    <input type="button" onClick={this.handleClick} value='点击改变'/>
+                </div>
+            )
+        },
+        handleClick:function(){
+            this.setState({
+                title:'hello chinatl'
+            })
+        }
+    })
+    ReactDOM.render(
+        <Hello/>
+        ,document.getElementById('app')
+    )
+#### getInitialState 可以设置state的初始值 , 通过setState 来设置this.state    
+
+    
+    

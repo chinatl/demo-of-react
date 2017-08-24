@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        var Hello = React.createClass({
+            getInitialState:function(){
+                return {
+                    title:'hello world'
+                }
+            },
+            render:function(){
+                return (
+                    <div>
+                        <h1>{this.state.title}</h1>
+                        <input type="button" onClick={this.handleClick} value='点击改变'/>
+                    </div>
+                )
+            },
+            handleClick:function(){
+                this.setState({
+                    title:'hello chinatl'
+                })
+            }
+            
+        })
+        ReactDOM.render(
+            <Hello/>
+            ,document.getElementById('app')
+        )
+    </script>
+</body>
+
+</html>
