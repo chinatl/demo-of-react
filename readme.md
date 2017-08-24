@@ -139,7 +139,9 @@ this.props.children 属性。它表示组件的所有子节点
         <Hello/>
         ,document.getElementById('app')
     )
-#### getInitialState 可以设置state的初始值 , 通过setState 来设置this.state    
+#### getInitialState 可以设置state的初始值 , 通过setState 来设置this.state 
+
+### 生命周期 Mounting: 已插入真实DOM Updating 正在被重新渲染 Unmounting 已移出真实DOM
 
     
     
