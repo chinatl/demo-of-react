@@ -37,4 +37,17 @@ ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言
             document.getElementById('app')
         )
 上面代码体现了 JSX 的基本语法规则：遇到 HTML 标签（以 < 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析   
-#### 注意: 如果返回多个html结构,必须要给标签家key值,否则会报错.
+#### 注意: 如果返回多个html结构,必须要给标签加key值,否则会报错.
+### 4.组件
+     var Hello = React.createClass({
+        render:function(){
+            return <h1>hello {this.props.title}</h1>   
+        }
+    })
+    ReactDOM.render(
+        <Hello title='world'/>
+     , document.getElementById('app')
+    )
+组件的用法与原生的 HTML 标签完全一致，可以任意加入属性，比如 hello 组件 ，就是 Hello 组件加入一个 title 属性，值为 world。组件的属性可以在组件类的 this.props 对象上获取.
+#### 注意: 组件类的第一个字母要大写,否则会报错, 组件里面必须有个根标签, 添加组件属性，有一个地方需要注意，就是 class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class 和 for 是 JavaScript 的保留字。
+
