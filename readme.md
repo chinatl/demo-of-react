@@ -70,3 +70,24 @@ ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言
         document.getElementById('app')
     )
 this.props.children 属性。它表示组件的所有子节点
+### 6. PropTypes的使用
+    var Hello = React.createClass({
+        render:function(){
+            return (
+                <h1>hello {this.props.title}</h1>  
+            )
+        },
+        propTypes:{
+            title:React.PropTypes.string.isRequired
+        },
+        getDefaultProps:function(){
+            return {
+                title: 'world'
+            }
+        }
+    })
+    ReactDOM.render(
+        <Hello/>
+        ,document.getElementById('app')
+    )
+组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求, 此外，getDefaultProps 方法可以用来设置组件属性的默认值。
